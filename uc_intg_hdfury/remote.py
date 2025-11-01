@@ -137,7 +137,7 @@ class HDFuryRemote(Remote):
             pages.append(self._create_system_page())
 
         if model_config.led_modes:
-            pages.append(self.create_led_page())
+            pages.append(self._create_led_page())
         
         return pages
 
@@ -257,7 +257,7 @@ class HDFuryRemote(Remote):
                 cmd=EntityCommand(cmd_id, {"command": cmd_id})
             ))
 
-        return UiPage(page_id="audio", name="Ambilight", items=items)
+        return UiPage(page_id="led", name="Ambilight", items=items)
 
     def _create_hdr_page(self) -> UiPage:
         items = []
